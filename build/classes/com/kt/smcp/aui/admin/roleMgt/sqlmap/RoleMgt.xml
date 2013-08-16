@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="admin.roleMgt">
+    <!-- cache eviction="FIFO" flushInterval="30000" readOnly="true" size="512"></cache -->
+	<resultMap id="roleMgtVo" class="com.kt.smcp.aui.admin.roleMgt.vo.RoleMgtVO">
+		<result column="ROLE_ID" property="roleId" />
+		<result column="ROLE_NM" property="roleNm" />
+		<result column="EXPLAIN" property="explain" />
+		<result column="CRET_DT" property="cretDt" />
+		<result column="CRETR_ID" property="cretrId" />
+		<result column="CHG_DT" property="chgDt" />
+		<result column="CHGR_ID" property="chgrId" />
+	</resultMap>
+
+    <!-- [role] 단건 조회 -->
+    <select id="select_view_role" parameterClass="com.kt.smcp.aui.admin.roleMgt.vo.RoleMgtVO" resultClass="com.kt.smcp.aui.admin.roleMgt.vo.RoleMgtVO" resultMap="roleMgtVo">    
+        SELECT 
+        	  ROLE_ID, 
+        	  ROLE_NM, 
+        	  EXPLAIN,
+        	  CRET_DT,
+        	  CRETR_ID,
+        	  CHG_DT, 
+        	  CHGR_ID
+         FROM ROLE_MGT
+        <dynamic>
+        <isEmpty property="roleId">
+         	WHERE ROLE_ID = -999999 
+        </isEmpty>
+        <isNotEmpty property="roleId">
+        	 WHERE ROLE_ID = #roleId# 
+        </isNotEmpty>
+        </dynamic>
+    </select>
+
+    <!-- [role] 목록 조회 -->
+    <select id="select_list_role" parameterClass="com.kt.smcp.aui.admin.roleMgt.vo.RoleMgtVO" resultClass="com.kt.smcp.aui.admin.roleMgt.vo.RoleMgtVO" resultMap="roleMgtVo"> 
+    	 SELECT 
+        	  ROLE_ID, 
+        	  ROLE_NM, 
+        	  EXPLAIN,
+        	  CRET_DT,
+        	  CRETR_ID,
+        	  CHG_DT, 
+        	  CHGR_ID
+         FROM ROLE_MGT
+		WHERE 1=1  
+		<dynamic>
+        	<isNotEmpty property = "explain">
+        		AND EXPLAIN like '%' + #explain# + '%'
+			</isNotEmpty>
+        	<isNotEmpty property = "roleId">
+        		AND ROLE_ID = #roleId#
+			</isNotEmpty>				
+		</dynamic>		
+			ORDER BY ROLE_ID ASC                	
+    </select>
+    
+    
+ <!-- [role] 등록  -->
+    <insert id="insert_role" parameterClass="com.kt.smcp.aui.admin.roleMgt.vo.RoleMgtVO">    
+        INSERT INTO ROLE_MGT
+        ( 
+         ROLE_ID, 
+         ROLE_NM, 
+         EXPLAIN,
+         CRET_DT,
+         CRETR_ID,
+         CHG_DT, 
+         CHGR_ID     
+        )
+        VALUES  
+        ( 
+          #roleId#   
+        , #roleNm#
+        , #explain#
+        , GETDATE()
+        , #cretrId#
+        , GETDATE()
+        , #chgrId# 
+        )            
+    </insert>
+    
+    <!-- [role] 수정  -->
+    <update id="update_role" parameterClass="com.kt.smcp.aui.admin.roleMgt.vo.RoleMgtVO">   
+        UPDATE ROLE_MGT          
+      	  SET        
+      	  <dynamic>     
+             CHGR_ID    =  #chgrId#
+         	,CHG_DT     =  GETDATE()
+             <isNotEmpty property="roleNm" prepend="," >ROLE_NM = #roleNm#</isNotEmpty> 
+             <isNotEmpty property="explain" prepend="," >EXPLAIN = #explain#</isNotEmpty> 
+        </dynamic>
+        WHERE   ROLE_ID = #roleId#
+    </update>    
+    
+    <!-- [role] 삭제  -->
+    <delete id="delete_role" parameterClass="com.kt.smcp.aui.admin.roleMgt.vo.RoleMgtVO">   
+        DELETE FROM ROLE_MGT
+        WHERE   ROLE_ID = #roleId#   
+    </delete>
+</sqlMap>

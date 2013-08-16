@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="EUC-KR" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="common">
+	<!-- [paging] 페이징처리 Header  -->
+    <sql id="pagingHeaderSql">
+    	SELECT *
+		  FROM (
+		  		SELECT *
+		     	  FROM (
+		    			SELECT (CASE 
+		                        	WHEN (TOTAL_CNT%#pageSize#) = 0 THEN TOTAL_CNT/#pageSize#
+		                        	ELSE TOTAL_CNT/#pageSize# + 1
+		                      	END) MAX_VIEW_PAGE
+		    			       ,#pageSize# PAGE_SIZE 
+		    			       ,#curPage# CUR_PAGE  
+		    			       ,Y.*
+		       			  FROM (             
+		              			SELECT (CASE 
+		                        			WHEN (#pageSize# * (#curPage# - 1) + 1) &gt; TOTAL_CNT THEN 1
+		                        			ELSE (#pageSize# * (#curPage# - 1) + 1) 
+		                      			END) START_NUM                
+		                     		   ,(CASE
+		                        			WHEN (#curPage# * #pageSize#) &gt; TOTAL_CNT THEN TOTAL_CNT
+		                        			ELSE (#curPage# * #pageSize#)
+		                      			END) END_NUM            
+		                     		   , X.*
+		              			  FROM (SELECT COUNT (*) OVER () TOTAL_CNT, Z.*
+		                     			  FROM (
+    </sql>
+    
+    <!-- [paging] 페이징처리 Footer  -->
+    <sql id="pagingFooterSql">
+    		                          		   ) Z 
+			                   		   ) X    
+			               	   ) Y
+			      	   )W
+			     WHERE RNUM &lt;= END_NUM
+			   )V   
+		 WHERE RNUM &gt;= START_NUM
+    </sql>
+</sqlMap>

@@ -1,0 +1,386 @@
+/*
+    
+    kt-navigation theme
+
+*/
+/* 상단 CSS */
+.kt-navigation.navbar .navbar-inner {
+  /*margin-top: 10px;*/
+  background-color: white;
+  background-image: none;
+  border: none;
+  height: 122px;
+  border-bottom: 4px solid #ed2024;
+  filter: none;
+  padding: 0px;
+}
+
+.kt-navigation.navbar .navbar-inner li{
+    margin-left: 23px;
+    margin-top: 20px;
+}
+
+.kt-navigation .navbar-inner a{
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 18px;
+  border: 1px solid #fff;
+}
+.navbar-inner .container-fluid {
+  color: #ffffff;
+  margin-top: 20px;
+  margin-left: 0px;
+  padding-left: 2px;
+}
+
+.kt-navigation .brand, .kt-navigation .nav > li > a {
+  text-shadow: none;
+  color: #555;
+  text-decoration: none;
+}
+
+.kt-navigation .nav .active > a:hover{
+  color: #ed2024;
+  text-decoration: none;
+}
+
+.navbar .btn-navbar:hover{
+  color: #ed2024;
+}
+
+.kt-navigation .nav > li > a:hover{
+  color: #ed2024;
+}
+
+.kt-navigation .nav .active > a,
+.kt-navigation .nav .active > a:hover,
+.kt-navigation .nav .active > a:focus {
+  color: #ed2024;
+  /*background-color: #ed2024;*/
+  background-color: #fff;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.kt-navigation a.brand {
+  float: none;
+  color: #ed2024;
+  position: relative;
+  line-height: 24px;
+  font-size: 24px;
+  display: block;
+  margin-top: 34px;
+  margin-left: 38px;
+  padding: 0px;
+  width: 174px;
+  height: 22px;
+  /*padding-left: 74px;*/
+  font-weight: bold;
+}
+
+.kt-navigation a.kt-brand div.alleh {
+  display: block;
+  width: 70px;
+  height: 22px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: url("../images/signin_image.png") 0px 0px no-repeat;
+}
+
+.kt-navigation.navbar .navbar-inner{
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.kt-navigation.navbar .dropdown-menu li{
+    display: block;
+    padding: 0px;
+    margin: 0px;
+}
+
+.kt-navigation .dropdown-menu li a{
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: normal;
+    background-color: #fff;
+}
+
+.kt-navigation.navbar .nav li.dropdown.open > .dropdown-toggle{
+    color: #ed2024;
+    background-color: #ffffff;
+    border-top: 1px solid #a8a8a8;
+    border-left: 1px solid #a8a8a8;
+    border-right: 1px solid #a8a8a8;
+    border-bottom: 1px solid #a8a8a8;
+    display: block; 
+    *zoom:1;
+}
+
+.kt-navigation.navbar .nav li.dropdown.active > .dropdown-toggle, 
+.kt-navigation.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    color: #ed2024;
+    background-color: #ffffff;
+}
+
+.kt-navigation .dropdown-menu {
+  position: absolute;
+  top: 38px;
+  left: 0px;
+  z-index: 100;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 0;
+  list-style: none;
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: normal;
+  background-color: #ffffff;
+  border: 1px solid #a8a8a8;
+  *border-right-width: 0;
+  *border-bottom-width: 0;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+  -webkit-background-clip: none;
+     -moz-background-clip: none;
+          background-clip: none;
+}
+
+
+.kt-navigation .open > .dropdown-menu {
+    display: block;
+}
+.kt-navigation.navbar .nav > li > .dropdown-menu:before {
+  position: absolute;
+  top: -1px;
+  width: 110px;
+  left: 1px;
+  display: inline-block;
+  border: 1px solid #fff;
+  border: none;
+ /* border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-left: 7px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.2);*/
+  content: '';
+}
+
+.kt-navigation.navbar .nav > li > .dropdown-menu:after {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  border-left: 6px solid transparent;
+  border: none;
+  content: '';
+}
+
+
+    /*display: none;
+    *zoom:1;
+    position: relative;
+    top: 9px;
+    margin: 0px;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: normal;
+    background-color: #ffffff;
+    border: 1px solid #a8a8a8;
+    padding: 6px 12px;
+    z-index: 100;*/
+
+/*
+ * kt-tree default theme 1.0
+ */
+
+ .kt-tree-default li, 
+ .kt-tree-default ins {
+    background-image: url("images/tree/d.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.kt-tree-default li {
+    background-position: -90px 0;
+    background-repeat: repeat-y;
+}
+
+.kt-tree-default li.kt-tree-last {
+    background: transparent;
+}
+
+.kt-tree-default .kt-tree-open > .kt-tree-ocl {
+    background-position: -72px 0;
+}
+
+.kt-tree-default .kt-tree-closed > .kt-tree-ocl {
+    background-position: -54px 0;
+}
+
+.kt-tree-default .kt-tree-leaf > .kt-tree-ocl {
+    background-position: -36px 0;
+}
+
+.kt-tree-default .kt-tree-loading > .kt-tree-ocl {
+    background: url("throbber.gif") center center no-repeat !important;
+}
+
+.kt-tree-default .kt-tree-hovered {
+    background: #e7f4f9;
+    border: 1px solid #d8f0fa;
+    padding: 0 2px 0 1px;
+    border-radius: 2px;
+}
+
+.kt-tree-default .kt-tree-clicked {
+    background: #beebff;
+    border: 1px solid #99defd;
+    padding: 0 2px 0 1px;
+    border-radius: 2px;
+}
+
+.kt-tree-default a .kt-tree-themeicon {
+    background-position: -56px -19px;
+}
+
+ /*.kt-tree-default.kt-tree-focused { background:#ffffee; }*/
+
+.kt-tree-default .kt-tree-no-dots li, 
+ .kt-tree-default .kt-tree-no-dots .kt-tree-leaf > .kt-tree-ocl {
+    background: transparent;
+}
+
+.kt-tree-default .kt-tree-no-dots .kt-tree-open > .kt-tree-ocl {
+    background-position: -18px 0;
+}
+
+.kt-tree-default .kt-tree-no-dots .kt-tree-closed > .kt-tree-ocl {
+    background-position: 0 0;
+}
+
+.kt-tree-default > .kt-tree-wholerow-ul .kt-tree-hovered, 
+ .kt-tree-default > .kt-tree-wholerow-ul .kt-tree-clicked {
+    background: transparent;
+    border: 0;
+    padding: 1px 2px;
+    border-radius: 0;
+}
+
+.kt-tree-default > .kt-tree-wholerow-ul .kt-tree-wholerow-hovered {
+    background: #e7f4f9;
+}
+
+.kt-tree-default > .kt-tree-wholerow-ul .kt-tree-wholerow-clicked {
+    background: #beebff;
+}
+
+.kt-tree-default .kt-tree-no-icons a .kt-tree-themeicon {
+    display: none;
+}
+
+.kt-tree-default .kt-tree-search {
+    font-style: italic;
+    color: aqua;
+}
+
+.kt-tree-default .kt-tree-no-checkboxes .kt-tree-checkbox {
+    display: none !important;
+}
+
+.kt-tree-default .kt-tree-check {
+    display: none !important;
+}
+
+.kt-tree-default .kt-tree-checkbox {
+    background-position: -2px -19px;
+}
+
+.kt-tree-default .kt-tree-checked {
+    background-position: -38px -19px;
+}
+
+.kt-tree-default .kt-tree-undetermined {
+    background-position: -20px -19px;
+}
+
+.kt-tree-default a:hover .kt-tree-checkbox {
+    background-position: -2px -37px;
+}
+
+.kt-tree-default a:hover .kt-tree-checked {
+    background-position: -38px -37px;
+}
+
+.kt-tree-default a:hover .kt-tree-undetermined {
+    background-position: -20px -37px;
+}
+
+#kt-tree-dnd.kt-tree-default ins {
+    background: transparent;
+}
+
+#kt-tree-dnd.kt-tree-default .kt-tree-ok {
+    background: url("images/tree/d.png") -2px -53px no-repeat;
+}
+
+#kt-tree-dnd.kt-tree-default .kt-tree-er {
+    background: url("images/tree/d.png") -18px -53px no-repeat;
+}
+ /*#kt-tree-marker.kt-tree-default { background:url("d.png") -41px -57px no-repeat !important; text-indent:-100px; }*/
+
+.kt-tree-default .kt-tree-locked a {
+    color: silver;
+    cursor: default;
+}
+
+/* IE6 BEGIN */
+.kt-tree-default li, 
+.kt-tree-default ins,
+.kt-tree-default .kt-tree-invalid, 
+.kt-tree-default .kt-tree-ok, 
+.kt-tree-default {
+    _background-image: url("images/tree/d.gif");
+}
+
+.kt-tree-default .kt-tree-open .kt-tree-ocl {
+    _background-position: -72px 0;
+}
+
+.kt-tree-default .kt-tree-closed .kt-tree-ocl {
+    _background-position: -54px 0;
+}
+
+.kt-tree-default .kt-tree-leaf .kt-tree-ocl {
+    _background-position: -36px 0;
+}
+
+.kt-tree-default .kt-tree-loading .kt-tree-ocl {
+    _background: url("images/tree/throbber.gif") center center no-repeat !important;
+}
+
+.kt-tree-default a ins.kt-tree-themeicon {
+    _background-position: -56px -19px;
+}
+
+.kt-tree-default .kt-tree-undetermined a .kt-tree-checkbox {
+    _background-position: -20px -19px;
+}
+
+.kt-tree-default .kt-tree-checked a .kt-tree-checkbox {
+    _background-position: -38px -19px;
+}
+
+.kt-tree-default .kt-tree-unchecked a .kt-tree-checkbox {
+    _background-position: -2px -19px;
+}
+/* IE6 END */

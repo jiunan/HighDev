@@ -1,0 +1,76 @@
+<h1><code ng:non-bindable="">userMgtCtrl</code>
+<span class="hint">(controller in module <code ng:non-bindable="">kt.admin.userMgt</code>
+)</span>
+</h1>
+<div><h2 id="Description">Description</h2>
+<div class="description"><p>사용자관리 컨트롤러</p></div>
+<h2 id="Dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$http">$http</a></code>
+</li>
+</ul>
+<div class="member method"><h2 id="Methods">Methods</h2>
+<ul class="methods"><li><h3 id="changePage">changePage(page, rowNum)</h3>
+<div class="changepage"><p>페이지 전환을 한다.</p><h4 id="Parameters">Parameters</h4>
+<ul class="parameters"><li><code ng:non-bindable="">page<i>(optional)</i> – {string=} – </code>
+<p>페이지 번호</p></li>
+<li><code ng:non-bindable="">rowNum<i>(optional)</i> – {string=} – </code>
+<p>행 갯수</p></li>
+</ul>
+</div>
+</li>
+<li><h3 id="deleteUser">deleteUser(userId)</h3>
+<div class="deleteuser"><p>그리드에서 선택한 사용자를 삭제한다.</p><h4 id="Parameters">Parameters</h4>
+<ul class="parameters"><li><code ng:non-bindable="">userId<i>(optional)</i> – {string=} – </code>
+<p>삭제할 사용자 ID</p></li>
+</ul>
+</div>
+</li>
+<li><h3 id="insertUser">insertUser(data)</h3>
+<div class="insertuser"><p>새로운 사용자를 추가한다.</p><h4 id="Parameters">Parameters</h4>
+<ul class="parameters"><li><code ng:non-bindable="">data<i>(optional)</i> – {object=} – </code>
+<p>추가할 사용자 폼 데이터</p></li>
+</ul>
+</div>
+</li>
+<li><h3 id="searchUser">searchUser(searchInfo)</h3>
+<div class="searchuser"><p>사용자를 검색한다.</p><h4 id="Parameters">Parameters</h4>
+<ul class="parameters"><li><code ng:non-bindable="">searchInfo<i>(optional)</i> – {string=} – </code>
+<p>검색 조건</p></li>
+</ul>
+</div>
+</li>
+<li><h3 id="selectUser">selectUser(selectedUser)</h3>
+<div class="selectuser"><p>그리드에서 row를 클릭시 호출되어 사용자를 선택한다.</p><h4 id="Parameters">Parameters</h4>
+<ul class="parameters"><li><code ng:non-bindable="">selectedUser<i>(optional)</i> – {object=} – </code>
+<p>그리드에서 선택한 row의 data</p></li>
+</ul>
+</div>
+</li>
+<li><h3 id="updateUser">updateUser(data)</h3>
+<div class="updateuser"><p>사용자 정보를 업데이트 한다.</p><h4 id="Parameters">Parameters</h4>
+<ul class="parameters"><li><code ng:non-bindable="">data<i>(optional)</i> – {object=} – </code>
+<p>추가할 사용자 폼 데이터</p></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="Properties">Properties</h2>
+<ul class="properties"><li><h3 id="roleList">roleList</h3>
+<div class="rolelist"><p>[array] 역할 목록이다. 검색조건에서 사용된다.</p></div>
+</li>
+<li><h3 id="searchInfo">searchInfo</h3>
+<div class="searchinfo"><p>{object} 검색조건이다. 내부 속성으로 "userId" - 사용자아이디,
+"userNm" - 사용자이름,
+"svcId" - 서비스아이디,
+"roleId" - 권한아이디 들이 있다.</p></div>
+</li>
+<li><h3 id="serviceList">serviceList</h3>
+<div class="servicelist"><p>[array] 서비스 목록이다. 검색조건에서 사용된다.</p></div>
+</li>
+<li><h3 id="userList">userList</h3>
+<div class="userlist"><p>{object} 사용자 목록이다. rows 프라퍼티에 list로 각 사용자 객체가 담겨있다.</p></div>
+</li>
+</ul>
+</div>
+</div>

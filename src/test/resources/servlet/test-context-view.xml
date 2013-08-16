@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <!-- XML Marshaller  -->
+	<bean name="xstreamMarshller" class="org.springframework.oxm.xstream.XStreamMarshaller" p:autodetectAnnotations="true" >
+	</bean>
+    
+    
+    <!-- ViewResolver -->
+	<bean id="contentNegotiationViewResolver"
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver"
+		p:order="1">
+		<!--
+		<property name="defaultContentType" value="application/json"></property>
+		-->
+		<property name="mediaTypes">
+		    <map>
+	    		<entry key="json" value="application/xml"/>
+		        <entry key="xml" value="application/json"/>
+		    </map>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
+				<bean class="org.springframework.web.servlet.view.xml.MarshallingView" >
+					<property name="marshaller" ref="xstreamMarshller" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="beanNameViewResolver"
+		class="org.springframework.web.servlet.view.BeanNameViewResolver"
+		p:order="2" />
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:order="3">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+    <bean id="exceptionResolver" class="com.kt.smcp.fw.mvc.view.BaseExceptionResolver">
+        <property name="view" value="comm/error"/>
+    </bean>
+</beans>

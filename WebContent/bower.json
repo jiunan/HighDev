@@ -1,0 +1,11 @@
+{
+  "name": "kt-admin-ui",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "~1.0.7",
+    "jquery": "1.9.1",
+    "bootstrap.css": "~2.1.1",
+    "jqgrid": "~4.5.2",
+    "jquery.ui": "~1.10.3"
+  }
+}
